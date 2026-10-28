@@ -1,6 +1,7 @@
 {
   "version": "1.0.0",
   "files": {
+    ".gitattributes": "0529f5711ef407142182a6fe342057015800408b7955a1a6127d9137980558a6",
     ".github/workflows/tests.yml": "2e6de5da872c7067a92292ff54b149293051702646050dc68dd3f59590603615",
     ".gitignore": "7d8ea9d6c617b2a0be07a0417015a176267ae152931824f183cc200c0bcdb0d0",
     "LICENSE": "bee61543f5261fd33803f3954f745afe12f172f231a0e7cb619d3e01fd8acfe8",

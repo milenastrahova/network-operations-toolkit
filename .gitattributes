@@ -1,0 +1,2 @@
+# Keep tracked source files LF on both Windows and Linux for the byte-exact SHA-256 release manifest.
+* text=auto eol=lf
