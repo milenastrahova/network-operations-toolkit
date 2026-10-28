@@ -1,0 +1,20 @@
+{
+  "audit": {
+    "experiment": "controlled_bgp_primary_failure",
+    "issues": [],
+    "limitations": "Semantic consistency check of supplied lab JSON, not evidence of its origin or packet-level loss, network downtime, BGP convergence, or HFT latency.",
+    "observed": {
+      "backup_local_preference": 100,
+      "backup_observed_after_stop_request_seconds": 1.234,
+      "baseline_peers_checked": 8,
+      "primary_local_preference": 200,
+      "recovery_local_preference": 200,
+      "restore_command_succeeded": true,
+      "timeline_events": 8,
+      "total_observation_seconds": 10.578
+    },
+    "status": "PASS"
+  },
+  "evidence_source": "operator-provided failover-experiment.json (not distributed)",
+  "source_sha256": "b2b2c93fd16a3612044910f45b650560859c027498a7392078fe3ae618e2e623"
+}

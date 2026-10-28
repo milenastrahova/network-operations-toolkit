@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+local-evidence/
+local-reports/
+*.pcap
+*.pcapng
+*.zip
+.DS_Store
+
+# Local installations and user-side incident data
+build/
+dist/
+*.whl
+*.tar.gz
+*.log

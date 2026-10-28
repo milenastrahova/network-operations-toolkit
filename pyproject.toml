@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "network-operations-toolkit"
+version = "1.0.0"
+description = "Network diagnostics and evidence-driven operations toolkit for a reproducible FRRouting lab"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name="Lab portfolio contributor"}]
+dependencies = []
+
+[project.scripts]
+netops = "netops.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["netops*"]
+
+[tool.setuptools.package-data]
+netops = ["data/*.json"]
