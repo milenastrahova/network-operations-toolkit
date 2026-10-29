@@ -5,6 +5,17 @@ Python 3.10+ · Standard library · CLI package · Windows/Linux CI
 
 A compact operations toolkit that turns observed BGP state and network measurements into reproducible JSON reports. It focuses on a practical engineering question: **what do we know from the evidence, and what has not been established?**
 
+## BGP Incident Triage
+
+New `bgp-triage` performs **offline, read-only symptom triage** on captured FRRouting JSON: detects peer/session issues, missing bestpaths, policy deviations and blocked prefixes; suggests specific next checks but never claims a proven cause or packet-level outage.
+
+```powershell
+py -3 scripts/generate_bgp_drills.py --output-dir .\\drill-output
+py -3 -m netops bgp-triage --snapshot .\\drill-output\\peer-not-established.json --baseline .\\drill-output\\healthy.json
+```
+
+The drill snapshots are **synthetic training fixtures**, not actual incidents. [Full runbook and interview exercises](docs/bgp-incident-triage.md).
+
 ## Capabilities
 
 | Command / module | Engineering purpose |

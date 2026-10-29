@@ -6,6 +6,7 @@ import json
 import sys
 from pathlib import Path
 from .frr import audit_snapshot, snapshot_live
+from .triage import triage_snapshot
 from .pcap import analyze_pcap
 from .probe import run_tcp_probe
 from .diff import compare_snapshots
@@ -42,6 +43,11 @@ def main(argv=None) -> int:
     live.add_argument("--compose", required=True)
     live.add_argument("--inventory", default=DEFAULT_INVENTORY)
     live.add_argument("--output")
+    triage = subs.add_parser("bgp-triage", help="Read-only BGP symptom triage and next diagnostic checks")
+    triage.add_argument("--snapshot", required=True)
+    triage.add_argument("--inventory", default=DEFAULT_INVENTORY)
+    triage.add_argument("--baseline", help="Optional previous BGP snapshot for observed changes")
+    triage.add_argument("--output", help="Write report to a new file; existing files are never overwritten")
     comparison = subs.add_parser("bgp-diff", help="Compare two BGP control-plane snapshots")
     comparison.add_argument("--before", required=True)
     comparison.add_argument("--after", required=True)
@@ -127,6 +133,20 @@ def main(argv=None) -> int:
             else:
                 snapshot = snapshot_live(Path(args.compose), list(inventory["routers"]))
             report = audit_snapshot(snapshot, inventory)
+            _emit(report, args.output)
+            return 0 if report["status"] == "PASS" else 2
+        if args.cmd == "bgp-triage":
+            inv = json.loads(Path(args.inventory).read_text(encoding="utf-8"))
+            snap = json.loads(Path(args.snapshot).read_text(encoding="utf-8"))
+            baseline = json.loads(Path(args.baseline).read_text(encoding="utf-8")) if args.baseline else None
+            sources = [Path(args.inventory).resolve(), Path(args.snapshot).resolve()]
+            if args.baseline:
+                sources.append(Path(args.baseline).resolve())
+            if args.output:
+                dest = Path(args.output).resolve()
+                if dest in sources or dest.exists():
+                    raise ValueError("Triage output already exists or equals an input; refusing overwrite")
+            report = triage_snapshot(snap, inv, baseline)
             _emit(report, args.output)
             return 0 if report["status"] == "PASS" else 2
         if args.cmd == "bgp-diff":

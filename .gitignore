@@ -16,3 +16,4 @@ dist/
 *.whl
 *.tar.gz
 *.log
+drill-output/

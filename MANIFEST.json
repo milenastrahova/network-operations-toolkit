@@ -3,10 +3,11 @@
   "files": {
     ".gitattributes": "0529f5711ef407142182a6fe342057015800408b7955a1a6127d9137980558a6",
     ".github/workflows/tests.yml": "2e6de5da872c7067a92292ff54b149293051702646050dc68dd3f59590603615",
-    ".gitignore": "7d8ea9d6c617b2a0be07a0417015a176267ae152931824f183cc200c0bcdb0d0",
+    ".gitignore": "d98f06c0fd1f4acdfb4fccf11d8fd9cf2a9034221a3c02877c66ac522ccde30a",
     "configs/bgp-gravity-lab.json": "6955c53e80eec168ba7460d38ababedc7d5e868b0ac177f1c5cbe5154bff53d0",
     "configs/bgp-routing-lab.json": "6955c53e80eec168ba7460d38ababedc7d5e868b0ac177f1c5cbe5154bff53d0",
     "docs/architecture.md": "6f3e425d56a05658213dcfbcb548328d69bf7f765cac6b89836853b87006895a",
+    "docs/bgp-incident-triage.md": "290b68b8e644abc55c158b7e106e760e6add1ae33f6a2f3782a244b714ab247f",
     "docs/controlled-failover.md": "43cd8dbce036bee5fa90e2c5e849f5c9518b2d354f6cd4023dedd2c285986c99",
     "docs/evidence-verification.md": "e3c2b8caa56c9395fb6e441f956e37fe207d6997edca96dd743711b139547a42",
     "docs/field-report-2026-10-28.md": "1d2de925f37b78267fd4f424aead19803dc67812b8243f99ab585146921fe276",
@@ -28,7 +29,7 @@
     "netops/__init__.py": "9b0800b4f3a5f407767c510aac192d8590385a8c3ebd9e686e7a1c391519cfb5",
     "netops/__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
     "netops/alerts.py": "a0141b23848c2fbfd350a100a3228a9ffc7532221cc8bd7f7890560a76d91022",
-    "netops/cli.py": "06ff1125975593846a79ef7bfcb43fe1735b4ae8f6c8ea52dd2d456003b95771",
+    "netops/cli.py": "762ddc2e4a17bd276275139ad86de64ec0d55e1146f23e58bdf660345f3b68cf",
     "netops/data/bgp-gravity-lab.json": "6955c53e80eec168ba7460d38ababedc7d5e868b0ac177f1c5cbe5154bff53d0",
     "netops/data/bgp-routing-lab.json": "6955c53e80eec168ba7460d38ababedc7d5e868b0ac177f1c5cbe5154bff53d0",
     "netops/diff.py": "eb08717952a1cc0cde91ead5da47f94bf2797ca9cafe40a6848f0368582a9208",
@@ -42,9 +43,11 @@
     "netops/persistent.py": "8cd2fff5fa20db11b5b1970a60870a0a748a8dbfa952025a94646f1eb1e11f6a",
     "netops/probe.py": "5ac3e5edff8c4879cb6db9607683b92e0023622f82eb4e6742cbe6ad30b041f1",
     "netops/reconstruction.py": "68cdc5d078eb0bce4f6a07016b790effbdca7a124adf7742c44e4474eeee1bf6",
+    "netops/triage.py": "21d7050fcdfa4ea905a580adca4f39fe100500e3a6016b1dd5058dfc99fcac4b",
     "pyproject.toml": "f126e9af6e5d6d860ab58315d95ab81a912c4cb9b920ce8bcbe245226b517480",
-    "README.md": "e64d81ad0be0efb619e7e9769a8e1af91df37f9ef5e0e277366d4ab4a94bea44",
+    "README.md": "29037ee7b9d5047b5e8fce1335b0b3260a683124f38cbfaf7e131c7efdfe1e1d",
     "RELEASE_NOTES.md": "b3f7ee669f036bacf09b7a971bc13942f920ec0720c0de6fa55452c9e41186fa",
+    "scripts/generate_bgp_drills.py": "e7bfb77683af4a80dbbf2f0c325410ec7ac7d76bdb138276a86d2acf80267d15",
     "scripts/install_smoke.py": "e37919566f5113223bb717e2e99213fbabebffe55a8d152c02058bf4a8b329b4",
     "scripts/release_audit.py": "3713c1952315bc53147fb3f30b5d927374291c33546822ddd7b592ba00e8181e",
     "tests/__init__.py": "7a304004095092fbd682190e8c9c6942e5574dea31f1cb8ca50a54ec006984cd",
@@ -59,7 +62,8 @@
     "tests/test_persistent.py": "18f7c10969730a19c42af67ae1512431c033353d67c64cefb2e6d1a0bcbf1eff",
     "tests/test_probe.py": "4365678cabebf854795fce026acc91a49b8c5d13488664e9680000bf439717ed",
     "tests/test_reconstruction.py": "0c4c98fe174a898acf0f1c3ef5ddab006ff6d1ae010eb3f0f100468dbf521ebb",
-    "tests/test_release_gate.py": "67b5bc59a9f954e35e64b42d45a3bd755145f55b323cedf5be5545b64454d5c1"
+    "tests/test_release_gate.py": "67b5bc59a9f954e35e64b42d45a3bd755145f55b323cedf5be5545b64454d5c1",
+    "tests/test_triage.py": "bd22395abe02019d80d338559b1307c2d9a1add2e08f4279a3df2eb9aea4a4a2"
   },
   "generation_notes": "SHA-256 consistency only; no signature or proof of origin, no packet-level or production latency validation. Raw user evidence excluded."
 }
