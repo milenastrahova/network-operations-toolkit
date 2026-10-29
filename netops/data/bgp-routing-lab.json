@@ -1,0 +1,10 @@
+{
+  "description": "Expected four-AS topology of the BGP Routing Laboratory v0.2; point-in-time bestpaths under healthy primary transit",
+  "blocked_prefixes": ["198.18.0.1/32"],
+  "routers": {
+    "edge": {"asn": 65010, "peers": {"10.255.10.3": 65020, "10.255.20.3": 65030}, "bestpaths": {"10.40.40.1/32": {"next_hop": "10.255.10.3", "min_local_preference": 200}}},
+    "transit_primary": {"asn": 65020, "peers": {"10.255.10.2": 65010, "10.255.30.3": 65040}},
+    "transit_backup": {"asn": 65030, "peers": {"10.255.20.2": 65010, "10.255.40.3": 65040}},
+    "core": {"asn": 65040, "peers": {"10.255.30.2": 65020, "10.255.40.2": 65030}, "bestpaths": {"10.10.10.1/32": {"next_hop": "10.255.30.2", "min_local_preference": 200}}}
+  }
+}

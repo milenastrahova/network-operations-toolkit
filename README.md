@@ -239,3 +239,5 @@ installation still awaits verification.**
 ## Engineering demonstration and independent skills check
 
 Use the [technical interview playbook](docs/technical-interview-playbook.md) to explain what this toolkit measures, reproduce a bounded read-only monitor run, troubleshoot a missing FRR peer or route, and practice extending a Python parser without pre-written answers. The package's historical `bgp-gravity-lab.json` inventory file is a **legacy identifier in this independent lab**, not a client deployment or affiliation with an employer. Do not assume the target Compose lab is safe for fault injection without checking its project identity and services.
+
+**Neutral inventory name (October 2026):** the default inventory is now `bgp-routing-lab.json`. The previous `bgp-gravity-lab.json` data file remains available as a backward-compatible alias so existing offline reports and scripts can be reproduced. Neither name indicates an employer deployment.

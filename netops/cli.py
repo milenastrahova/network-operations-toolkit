@@ -17,7 +17,7 @@ from .evidence import verify_failover_evidence
 from .reconstruction import load_failover, load_journal, reconstruct_incident, render_incident_markdown
 from . import __version__
 
-DEFAULT_INVENTORY = str(Path(__file__).resolve().parent / "data" / "bgp-gravity-lab.json")
+DEFAULT_INVENTORY = str(Path(__file__).resolve().parent / "data" / "bgp-routing-lab.json")
 
 
 def _emit(obj: dict, filename: str | None):
