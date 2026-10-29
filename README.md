@@ -8,12 +8,12 @@
 
 ## v1.0 release acceptance and scope
 
-This release is **portfolio-ready for a private GitHub repository**, not a production network-monitoring appliance. The operator has independently shown: 125 Python tests passing on Windows 11 (one platform-dependent symlink test skipped); `incident-review` verified supplied October 28 BGP failover evidence with `PASS`; the monitor journal correctly returned `NO_OVERLAP` because the data came from a different time interval. The final v1.0 source has 134 passing Linux Python 3.13 tests, manifest verification and isolated install smoke checks; **the operator has not yet run v1.0 on Windows**.
+This release is **portfolio-ready for a private GitHub repository**, not a production network-monitoring appliance. The operator has independently shown: 125 Python tests passing on Windows 11 (one platform-dependent symlink test skipped); `incident-review` verified supplied October 28 BGP failover evidence with `PASS`; the monitor journal correctly returned `NO_OVERLAP` because the data came from a different time interval. The final v1.0 source has 134 passing Linux Python 3.13 tests, manifest verification and isolated install smoke checks; **the operator subsequently passed v1.0 tests and release audit on Windows 11**.
 
 - Start with `py -3 -m unittest discover -v`, `py -3 -m netops --version`, and `py -3 scripts\release_audit.py` on Windows.
 - `netops` is installable with Python packaging; the default FRR inventory travels **inside** the package. From a repository clone, no installation is needed (`py -3 -m netops`).
 - A zero-dependency release audit validates the SHA-256 file manifest and rejects unexpected local capture/report files. It does not make repository files tamper-proof.
-- GitHub Actions runs Windows/Linux matrix tests and an additional install smoke test. An actual **green remote CI run is required** before calling the GitHub release complete.
+- GitHub Actions runs Windows/Linux matrix tests and an additional install smoke test. GitHub Actions later passed the complete Windows/Linux Python 3.10/3.13 matrix and installed-package smoke checks (run 40725467567).
 - Evidence limitations and explicit release signoff gates are described in [release acceptance](docs/release-acceptance.md).
 
 ## Why this exists
@@ -235,3 +235,7 @@ active alert. These operator results were reported via PowerShell screenshots,
 not independent raw-journal attestation. **v0.6 offline development tests and
 field-evidence reconstruction have passed on Linux; v0.6 on the operator's Windows
 installation still awaits verification.**
+
+## Engineering demonstration and independent skills check
+
+Use the [technical interview playbook](docs/technical-interview-playbook.md) to explain what this toolkit measures, reproduce a bounded read-only monitor run, troubleshoot a missing FRR peer or route, and practice extending a Python parser without pre-written answers. The package's historical `bgp-gravity-lab.json` inventory file is a **legacy identifier in this independent lab**, not a client deployment or affiliation with an employer. Do not assume the target Compose lab is safe for fault injection without checking its project identity and services.

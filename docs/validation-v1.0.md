@@ -23,3 +23,7 @@
 - No packet-level outage measurement, queue latency, NIC timing, production network or HFT venue connectivity was attempted.
 
 These are **controlled portfolio laboratory findings**, not verified professional production experience.
+
+## October 2026 final hosted verification
+
+All four GitHub Actions jobs passed on Ubuntu and Windows with Python 3.10/3.13 after LF normalization and manifest correction: [successful run](https://github.com/milenastrahova/network-operations-toolkit/actions/runs/40725467567). Operator Windows v1.0 tests passed with one platform-dependent symlink test skipped. These checks validate source, packaging and mocked/offline behavior; the earlier live FRRouting monitoring and controlled outage were conducted separately in the local Docker lab. They are not a production incident exercise.
