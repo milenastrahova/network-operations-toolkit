@@ -47,7 +47,7 @@
     "pyproject.toml": "f126e9af6e5d6d860ab58315d95ab81a912c4cb9b920ce8bcbe245226b517480",
     "README.md": "29037ee7b9d5047b5e8fce1335b0b3260a683124f38cbfaf7e131c7efdfe1e1d",
     "RELEASE_NOTES.md": "b3f7ee669f036bacf09b7a971bc13942f920ec0720c0de6fa55452c9e41186fa",
-    "scripts/generate_bgp_drills.py": "e7bfb77683af4a80dbbf2f0c325410ec7ac7d76bdb138276a86d2acf80267d15",
+    "scripts/generate_bgp_drills.py": "5a0742846783446ce26b12ee2736ffe4374765f5280c62135e5ce048d8d061c5",
     "scripts/install_smoke.py": "e37919566f5113223bb717e2e99213fbabebffe55a8d152c02058bf4a8b329b4",
     "scripts/release_audit.py": "3713c1952315bc53147fb3f30b5d927374291c33546822ddd7b592ba00e8181e",
     "tests/__init__.py": "7a304004095092fbd682190e8c9c6942e5574dea31f1cb8ca50a54ec006984cd",

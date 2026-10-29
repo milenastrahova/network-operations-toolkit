@@ -4,6 +4,12 @@ import argparse
 import copy
 import json
 from pathlib import Path
+import sys
+
+# Make the checkout importable when invoked as a script without pip install.
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
 from netops.frr import PEERS_CMD, ROUTES_CMD
 from netops.cli import DEFAULT_INVENTORY
